@@ -263,6 +263,8 @@ body.ativo {
 
 
 /* Catálogo principal de filmes */
+
+/* Primeira coluna de filmes em exibição */
 .secao-filmes {
     padding: 24px;
     padding-left: 7%;
@@ -289,6 +291,8 @@ body.ativo {
 }
 
 /* Mudança de cores no background */
+
+/* Segunda coluna de filmes (background diferente) */
 .secao-filmes2 {
     padding: 24px;
     padding-left: 7%;
@@ -315,6 +319,10 @@ body.ativo {
     gap: 8px;
 }
 
+.filme-card:hover {
+    transform: scale(1.05);
+    transition: 0.5s ease;
+}
 .poster {
     width: 100%;
     overflow: hidden;
@@ -327,7 +335,6 @@ body.ativo {
     object-fit: cover;
     aspect-ratio: 2/3;
     border-radius: 15px;
-    box-shadow: 5px 5px 5px var(--primary-color);
 }
 
 .filme-descricao {

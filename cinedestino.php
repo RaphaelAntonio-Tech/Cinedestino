@@ -1,3 +1,48 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include("cadastro_de_usuarios/conexao.php");
+
+$id_usuario = $_SESSION['id_usuario'] ?? null;
+$foto_perfil = "../cinedestino/cadastro_de_usuarios/foto_nao_definida/default.png";
+
+if ($id_usuario) {
+    $consulta_foto = "SELECT foto_perfil FROM usuarios WHERE id = ?";
+    $stmt = $mysqli->prepare($consulta_foto);
+    $stmt->bind_param("i", $id_usuario);
+    $stmt->execute();
+    $stmt->bind_result($foto);
+
+    if ($stmt->fetch()) {
+
+        if (!empty($foto)) {
+            $foto_perfil = $foto;
+        }
+    }
+
+    $stmt->close();
+}
+
+if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true)) {
+    unset($_SESSION['email']);
+    unset($_SESSION['senha']);
+    header('Location: /cinedestino/cadastro_de_usuarios/login.php');
+}
+
+$logado = $_SESSION['email'];
+$nome = $_SESSION['nome'] ?? 'Usuário';
+$nomeCompleto = $_SESSION['nome'] ?? '';
+$primeiroNome = explode(
+    ' ',
+    $nomeCompleto
+)[0];
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,8 +65,9 @@
                 <li><a href="#" class="item-list"><i class="fa-solid fa-house"></i>Página inicial</a></li>
                 <li><a href="#" class="item-list"><i class="fa-solid fa-gears"></i>Catálogo</a></li>
                 <li><a href="#" class="item-list"><i class="fa-solid fa-circle-info"></i>Sobre</a></li>
-                <a href="#" class="botao-login">Entrar</a>
+                <li><a href="/cinedestino/cadastro_de_usuarios/sair.php" class="item-list">Sair</a></li>
             </ul>
+            <img src="../cinedestino/cadastro_de_usuarios/<?php echo htmlspecialchars($foto_perfil); ?>" class="foto_de_perfil" alt="foto de perfil">
         </nav>
 
         <!-- Versão responsiva de menu para Tablets e celulares -->
@@ -34,7 +80,7 @@
                 <li><a href="#"><i class="fa-solid fa-house"></i></a>Página Incial</li>
                 <li><a href="#"><i class="fa-solid fa-gears"></i>Catálogo</a></li>
                 <li><a href="#"><i class="fa-solid fa-circle-info"></i>Sobre</a></li>
-                <li><a href="#"><i class="fa-solid fa-envelope"></i>Entrar</a></li>
+                <li><a href="/cinedestino/cadastro_de_usuarios/sair.php" class="item-list">Sair</a></li>
             </ul>
 
         </nav>
@@ -62,8 +108,6 @@
 
         <section class="secao-filmes">
             <h1 class="secao-title">Lançamento</h1>
-
-            <!-- Primeira coluna de filmes em exibição -->
 
             <article class="filmes">
                 <div class="filme-card">
@@ -122,13 +166,11 @@
                 </div>
             </article>
         </section>
-
         <!-- Mudança de cores no background-->
 
         <section class="secao-filmes2">
-
-            <!-- Segunda coluna de filmes (background diferente)-->
             <article class="filmes2">
+
                 <div class="filme-card">
                     <div class="poster">
                         <img src="assets/Image/Lágrimas de Esperança.jpg" alt="Lágrimas de Esperança"
@@ -188,13 +230,9 @@
 
         <!-- Catálogo principal de filmes (Versão tablet e Mobile)-->
 
-
-
+        <!-- Parte 1 - background normal -->
         <section class="secao-filmes-mobile">
             <article class="filmes-mobile">
-
-                <!-- Primeira coluna de filmes em exibição (Versão de Mobile)-->
-
                 <div class="filme-card-mobile">
                     <div class="poster-mobile">
                         <img src="assets/Image/Caminho da Luz.jpg" alt="Caminho da Luz"
@@ -233,9 +271,6 @@
         <!-- Parte 2 - background diferente -->
 
         <section class="secao-filmes-mobile2">
-
-            <!-- Segunda coluna de filmes (background diferente - Versão de Mobile)-->
-
             <article class="filmes-mobile2">
                 <div class="filme-card-mobile2">
                     <div class="poster-mobile2">
@@ -272,12 +307,9 @@
             </article>
         </section>
 
-
+        <!-- Parte 3 - background normal -->
 
         <section class="secao-filmes-mobile">
-
-            <!--  Terceira coluna de filmes (background diferente - Versão de Mobile)-->
-
             <article class="filmes-mobile">
                 <div class="filme-card-mobile">
                     <div class="poster-mobile">
@@ -314,7 +346,7 @@
             </article>
         </section>
 
-        <!-- Quarta coluna de filmes (background diferente - Versão de Mobile)-->
+        <!-- Parte 4 - background diferente -->
 
         <section class="secao-filmes-mobile3">
             <article class="filmes-mobile3">
