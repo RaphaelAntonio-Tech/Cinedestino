@@ -129,7 +129,7 @@ header {
 .menu-lateral ul li:hover {
     background-color: var(--text-color);
     color: var(--primary-color);
-    transform: 0.5s;
+    transition: 0.5s;
 }
 
 .menu-lateral ul li a i:hover {
@@ -323,6 +323,7 @@ body.ativo {
     transform: scale(1.05);
     transition: 0.5s ease;
 }
+
 .poster {
     width: 100%;
     overflow: hidden;
@@ -408,6 +409,11 @@ body.ativo {
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 100px;
+}
+
+.info-link a:hover {
+    color: white;
+    transition: 0.5s ease;
 }
 
 .info-title {
@@ -593,6 +599,10 @@ body.ativo {
         flex-direction: column;
     }
 
+    .filme-card-mobile:hover {
+        transform: scale(1.1);
+        transition: 0.5s ease;
+    }
     .poster-mobile img {
         width: 100%;
         border-radius: 8px;
@@ -630,6 +640,10 @@ body.ativo {
         flex-direction: column;
     }
 
+    .filme-card-mobile2:hover {
+        transform: scale(1.1);
+        transition: 0.5s ease;
+    }
     .poster-mobile2 img {
         width: 100%;
         border-radius: 8px;
@@ -668,6 +682,10 @@ body.ativo {
         flex-direction: column;
     }
 
+    .filme-card-mobile3:hover {
+        transform: scale(1.1);
+        transition: 0.5s ease;
+    }
     .poster-mobile3 img {
         width: 100%;
         border-radius: 8px;
@@ -767,6 +785,10 @@ body.ativo {
         color: var(--text-color);
     }
 
+    .services a:hover {
+        color: white;
+        transition: 0.5s ease;
+    }
 
     /* TEXTO FINAL */
     .footer-bottom {
@@ -858,6 +880,9 @@ body.ativo {
         margin: 78px auto;
     }
 
+    .secao-title {
+        margin: 9px 0px 8%;
+    }
     .filmes-mobile {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -867,6 +892,11 @@ body.ativo {
     .filme-card-mobile {
         display: flex;
         flex-direction: column;
+    }
+
+    .filme-card-mobile:hover {
+        transform: scale(1.05);
+        transition: 0.5s ease;
     }
 
     .poster-mobile img {
@@ -891,7 +921,8 @@ body.ativo {
         display: block;
         background-color: var(--primary-color);
         color: var(--text-color);
-        padding: 40px;
+        padding: 51px 15px;
+        height: 40%;
     }
 
     .filmes-mobile2 {
@@ -903,6 +934,11 @@ body.ativo {
     .filme-card-mobile2 {
         display: flex;
         flex-direction: column;
+    }
+    
+    .filme-card-mobile2:hover {
+        transform: scale(1.05);
+    transition: 0.5s ease;
     }
 
     .poster-mobile2 img {
@@ -943,7 +979,7 @@ body.ativo {
     }
 
     .poster-mobile3 img {
-        width: 60%;
+        width: 100%;
         border-radius: 8px;
     }
 
@@ -977,7 +1013,7 @@ body.ativo {
 
     .info-title-mobile {
         color: var(--text-color);
-        font-size: 15px;
+        font-size: 30px;
         margin-bottom: 15px;
     }
 
@@ -1004,6 +1040,7 @@ body.ativo {
         list-style: none;
     }
 
+    
     .coluna-horizontal {
         display: flex;
         flex-direction: row;
@@ -1021,7 +1058,8 @@ body.ativo {
     }
 
     .footer-links a:hover {
-        color: var(--text-color);
+        color: white;
+        transition: 0.5s ease;
     }
 
     .footer-copy {
