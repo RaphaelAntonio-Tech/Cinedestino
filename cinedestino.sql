@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 28/11/2025 às 17:26
+-- Tempo de geração: 10/12/2025 às 19:25
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -32,7 +32,7 @@ CREATE TABLE `usuarios` (
   `nome` varchar(100) NOT NULL,
   `email` varchar(140) NOT NULL,
   `senha` varchar(255) NOT NULL,
-  `foto_perfil` varchar(255) NOT NULL
+  `foto_perfil` varchar(255) NOT NULL DEFAULT 'foto_nao_definida/default.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `foto_perfil`) VALUES
-(29, 'Lucas Batista De Oliveira', 'robertaodamassa99@gmail.com', '$2y$10$a73Nyce.i0q/4nYRoTOTW.RBueuZMUFEA7UG7SpgXIkX8IeJ4hPF2', 'foto_definida/6920a87f9ce0e.jpg');
+(29, 'Roberto Almeida Kim', 'robertaodamassa99@gmail.com', '$2y$10$a73Nyce.i0q/4nYRoTOTW.RBueuZMUFEA7UG7SpgXIkX8IeJ4hPF2', 'foto_definida/693466d7a174f.jpg');
 
 --
 -- Índices para tabelas despejadas
@@ -60,7 +60,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
