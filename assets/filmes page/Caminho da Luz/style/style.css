@@ -16,7 +16,7 @@
 
 /* menu responsivo para tablets e celulares*/
 body {
-    background-image: url(../../image/Caminho\ da\ Luz\ -\ background\ \(Desktop\ \ Versão\).jpg);
+    background-image: url(../../Image/Caminho\ da\ Luz\ -\ background\ \(Desktop\ \ Versão\).jpg);
     background-repeat: no-repeat;
     background-color: var(--secundary-color);
     transition: background-color 0.5s ease;
