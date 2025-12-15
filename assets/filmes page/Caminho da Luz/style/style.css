@@ -251,8 +251,8 @@ body {
 }
 
 .botao-menu.ativo {
+    right: 320px;
     z-index: 55;
-    right: 308px;
 }
 
 /* Container poster */

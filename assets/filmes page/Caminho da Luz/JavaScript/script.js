@@ -14,7 +14,7 @@ function toggleMenu() {
 
 // Fecha o menu ao clicar no fundo escurecido
 function closeMenu() {
-    botao.classList.remove('ativo')
+    botao.classList.remove('ativo');
     menuLateral.classList.remove('ativo');
     background.classList.remove('ativo');
 }

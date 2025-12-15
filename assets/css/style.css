@@ -14,7 +14,7 @@
     font-family: "Nunito", sans-serif;
 }
 
-/* Menu versão Desktop*/
+/* Menu  responsivo para Tablets e celulares*/
 body {
     background-image: url(../Image/background.jpg);
     background-repeat: no-repeat;
@@ -75,10 +75,9 @@ header {
     transition: 1s ease;
 }
 
-/* menu versão responsiva (Tablet e Celulares)*/
+/* Versão responsiva de menu para Tablets / celulares */
 
 .menu-lateral {
-    display: none;
     position: fixed;
     right: -300px;
     top: 0;
@@ -86,7 +85,7 @@ header {
     height: 100%;
     color: var(--text-color);
     background-color: var(--secundary-color);
-    z-index: 2;
+    z-index: 50;
     box-shadow: 5px 5px 5px var(--secundary-color);
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
@@ -106,34 +105,31 @@ header {
 }
 
 .menu-lateral ul li a {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: var(--text-color);
     font-size: 18px;
-    display: flex;
-    align-items: center;
     gap: 10px;
 }
 
 .menu-lateral ul li a:hover {
     color: var(--secundary-color);
-    transition: 1s ease;
-    padding: 20px;
+    transition: 0.3s ease;
 }
 
 .menu-lateral ul li a i {
     font-size: 24px;
-
 }
 
 .menu-lateral ul li:hover {
     background-color: var(--text-color);
     color: var(--primary-color);
-    transition: 0.5s;
 }
 
 .menu-lateral ul li a i:hover {
+    transition: 0.3s ease;
     transform: translateX(5px) rotate(5deg);
-    color: var(--secundary-color);
 }
 
 .botao-menu {
@@ -141,7 +137,7 @@ header {
     background-color: var(--secundary-color);
     color: var(--text-color);
     position: fixed;
-    right: 20px;
+    right: 50px;
     top: 20px;
     z-index: 3;
     border-radius: 5px;
@@ -160,6 +156,7 @@ header {
 
 .botao-menu.ativo {
     right: 320px;
+    z-index: 55;
 }
 
 .conteudo {
@@ -171,19 +168,14 @@ body.ativo {
     background-color: var(--secundary-color);
 }
 
-.conteudo.ativo {
-    margin-right: 320px;
-}
-
-
 .background {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.753);
     opacity: 0;
+    transition: 0.3s ease;
     visibility: hidden;
     z-index: 4;
 }
@@ -205,13 +197,13 @@ body.ativo {
 }
 
 .apresentacao h1 {
-    font-size: 40px;
+    font-size: 50px;
 }
 
 .apresentacao h3 {
     font-weight: normal;
     margin-bottom: 30px;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .barra-de-pesquisa {
@@ -243,11 +235,16 @@ body.ativo {
     border-radius: 15px;
 }
 
+#Pesquisar::placeholder {
+    color: var(--text-color);
+}
+
 #botao-pesquisa {
-    padding: 17px 30px;
+    padding: 14px 40px;
     background-color: var(--tercery-color);
     color: white;
-    border-radius: 14px;
+    border-radius: 10px;
+    font-size: 16px;
     text-decoration: none;
     border: none;
     cursor: pointer;
@@ -261,12 +258,9 @@ body.ativo {
 
 
 
-/* Catálogo principal de filmes */
-
-/* Primeira coluna de filmes em exibição */
+/* Catálogo Desktop - Parte 1 */
 .secao-filmes {
-    padding: 24px;
-    padding-left: 7%;
+    padding: 24px 7%;
     margin-top: 40%;
 }
 
@@ -289,12 +283,20 @@ body.ativo {
     color: var(--text-color);
 }
 
-/* Mudança de cores no background */
+/* Catálogo Desktop - PARTE (Mudança de cores no background) */
 
-/* Segunda coluna de filmes (background diferente) */
+.secao-title-mobile {
+    display: none;
+    color: var(--text-color);
+    background-color: var(--secundary-color);
+    font-size: 40px;
+    margin: 8px 0 2%;
+    font-weight: 600;
+}
+
+
 .secao-filmes2 {
-    padding: 24px;
-    padding-left: 7%;
+    padding: 50px 7%;
     background-color: var(--primary-color);
     color: var(--text-color);
 }
@@ -304,7 +306,7 @@ body.ativo {
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: flex-start;
-    height: 87vh;
+    height: 65vh;
 
 }
 
@@ -329,7 +331,7 @@ body.ativo {
 }
 
 .poster img {
-    width: 80%;
+    width: 85%;
     height: 100%;
     display: block;
     object-fit: cover;
@@ -351,9 +353,9 @@ body.ativo {
     font-size: 15px
 }
 
-/* Catálogo principal de filmes (Versão tablet e Mobile) */
+/* Catálogo Versão tablet e Mobile  */
 
-/* Parte 1 - background normal */
+/* Mobile PARTE 1 */
 
 .secao-filmes-mobile {
     display: none;
@@ -367,7 +369,7 @@ body.ativo {
     display: none;
 }
 
-/* Parte 2 - background diferente */
+/* Mobile PARTE 2 - background diferente  */
 
 .secao-filmes-mobile2 {
     display: none;
@@ -381,7 +383,7 @@ body.ativo {
     display: none;
 }
 
-/* Parte 3 - background diferente */
+/* Mobile PARTE 3 */
 
 .secao-filmes-mobile3 {
     display: none;
@@ -395,7 +397,7 @@ body.ativo {
     display: none;
 }
 
-/* Criador e créditos do site*/
+/* FOOTER Desktop versão */
 
 .informacoes {
     color: var(--text-color);
@@ -480,7 +482,7 @@ body.ativo {
     text-decoration: none;
 }
 
-/* mobile versão */
+/* FOOTER TABLET */
 
 .informacoes-tablet {
     display: none;
@@ -522,7 +524,7 @@ body.ativo {
 }
 
 
-/*Footer versão (Mobile)*/
+/* FOOTER MOBILE */
 
 .footer-mobile {
     display: none;
@@ -548,12 +550,24 @@ body.ativo {
         display: block;
     }
 
-    .apresentacao {
-        margin-left: 5%;
-        margin-right: 20%;
+    .secao-title {
+        display: none
     }
 
-    /* Catálogo principal de filmes - Versão de Desktop  */
+    .secao-title-mobile {
+        display: block;
+        margin-bottom: 10%;
+    }
+
+    .apresentacao {
+        margin: 9vh 9% -10% 5%;
+    }
+
+    .barra-de-pesquisa {
+        margin-top: 50%;
+    }
+
+    /* Catálogo Desktop - Parte 1 */
 
     .secao-filmes {
         margin-top: 55%;
@@ -567,7 +581,7 @@ body.ativo {
         display: none;
     }
 
-
+    /* Catálogo Desktop - PARTE 1 (Mudança de cores no background) */
     .secao-filmes2 {
         display: none;
     }
@@ -576,7 +590,7 @@ body.ativo {
         display: none;
     }
 
-    /* Catálogo principal de filmes (Versão tablet e Mobile) */
+    /* Catálogo Versão tablet e Mobile */
 
     /* Parte 1 - background normal */
 
@@ -599,9 +613,10 @@ body.ativo {
     }
 
     .filme-card-mobile:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
         transition: 0.5s ease;
     }
+
     .poster-mobile img {
         width: 100%;
         border-radius: 8px;
@@ -643,6 +658,7 @@ body.ativo {
         transform: scale(1.1);
         transition: 0.5s ease;
     }
+
     .poster-mobile2 img {
         width: 100%;
         border-radius: 8px;
@@ -685,6 +701,7 @@ body.ativo {
         transform: scale(1.1);
         transition: 0.5s ease;
     }
+
     .poster-mobile3 img {
         width: 100%;
         border-radius: 8px;
@@ -701,7 +718,7 @@ body.ativo {
         opacity: 0.7;
     }
 
-    /* Criador e créditos do site - Desktop versão*/
+    /* FOOTER Desktop versão */
 
     .informacoes {
         display: none;
@@ -712,7 +729,7 @@ body.ativo {
         display: none;
     }
 
-    /*Versão tablet */
+    /* FOOTER TABLET */
     .informacoes-tablet {
         display: block;
     }
@@ -750,7 +767,7 @@ body.ativo {
     }
 
     .footer-col ul li {
-        margin-bottom: 8px;
+        margin-bottom: 10px;
     }
 
     .footer-col ul li a {
@@ -771,12 +788,11 @@ body.ativo {
         margin-bottom: 20px;
     }
 
-
-
     .services {
         display: flex;
         justify-content: space-between;
         text-decoration: none;
+        margin-bottom: 10px;
     }
 
     .services a {
@@ -793,10 +809,11 @@ body.ativo {
     .footer-bottom {
         text-align: center;
         margin-top: 40px;
+        text-transform: uppercase;
     }
 
     .footer-bottom p {
-        margin: 5px 0;
+        margin: 10px 0;
         color: #d6caa2;
     }
 
@@ -808,6 +825,7 @@ body.ativo {
         background-image: url(../Image/Background\ -\ mobile\ version.jpg);
     }
 
+    /* Menu Versão Desktop */
     .apresentacao h1 {
         font-size: 28px;
     }
@@ -820,14 +838,22 @@ body.ativo {
         display: block;
     }
 
+    .botao-menu.ativo {
+        right: 290px;
+    }
+
     .menu-lateral {
         display: block;
+        width: 250px;
     }
 
     .apresentacao {
         margin-top: 5vh;
         margin-left: 8%;
         margin-right: 16%;
+    }
+    .apresentacao h1 {
+        font-size: 36px;
     }
 
     .apresentacao h3 {
@@ -843,10 +869,11 @@ body.ativo {
         margin-top: 43px;
     }
 
-    /* Catálogo principal de filmes - Versão de Desktop  */
+    /* Catálogo Desktop - Parte 1 */
 
     .secao-filmes {
-        margin-top: 55%;
+        display: block;
+        margin-top: 15%;
     }
 
     .filmes {
@@ -857,7 +884,7 @@ body.ativo {
         display: none;
     }
 
-
+    /* Catálogo Desktop - PARTE 1 (Mudança de cores no background) */
     .secao-filmes2 {
         display: none;
     }
@@ -866,11 +893,8 @@ body.ativo {
         display: none;
     }
 
-    .secao-filmes {
-        display: none;
-    }
 
-    /* Parte 1 - background normal */
+    /* Parte 1 - Catálogo Versão tablet e Mobile */
 
     .secao-filmes-mobile {
         display: block;
@@ -882,6 +906,7 @@ body.ativo {
     .secao-title {
         margin: 9px 0px 8%;
     }
+
     .filmes-mobile {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -914,7 +939,7 @@ body.ativo {
         opacity: 0.7;
     }
 
-    /* Parte 2 - background diferente */
+    /* Mobile PARTE 2 - background diferente */
 
     .secao-filmes-mobile2 {
         display: block;
@@ -934,10 +959,10 @@ body.ativo {
         display: flex;
         flex-direction: column;
     }
-    
+
     .filme-card-mobile2:hover {
         transform: scale(1.05);
-    transition: 0.5s ease;
+        transition: 0.5s ease;
     }
 
     .poster-mobile2 img {
@@ -956,7 +981,7 @@ body.ativo {
         opacity: 0.7;
     }
 
-    /* Parte 3 - background diferente */
+    /* Terceira coluna de filmes (background diferente - Versão de Mobile) */
     .secao-filmes-mobile3 {
         display: flex;
         background-color: var(--primary-color);
@@ -1039,7 +1064,7 @@ body.ativo {
         list-style: none;
     }
 
-    
+
     .coluna-horizontal {
         display: flex;
         flex-direction: row;
