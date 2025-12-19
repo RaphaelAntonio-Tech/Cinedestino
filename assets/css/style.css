@@ -16,7 +16,7 @@
 
 /* Menu  responsivo para Tablets e celulares*/
 body {
-    background-image: url(../Image/background.jpg);
+    background-image: url('../Image/background.jpg');
     background-repeat: no-repeat;
     background-color: var(--secundary-color);
     transition: background-color 0.5s ease;
@@ -535,7 +535,7 @@ body.ativo {
 
     /* Menu versão Tablets*/
     body {
-        background-image: url(../Image/Background\ -\ tablet\ version.jpg);
+        background-image: url('../Image/Background\ -\ tablet\ version.png');
     }
 
     .nav-list {
@@ -822,7 +822,7 @@ body.ativo {
 /* Responsividade mobile */
 @media (min-width: 370px) and (max-width: 710px) {
     body {
-        background-image: url(../Image/Background\ -\ mobile\ version.jpg);
+        background-image: url('../Image/Background\ -\ mobile\ version.png');
     }
 
     /* Menu Versão Desktop */
