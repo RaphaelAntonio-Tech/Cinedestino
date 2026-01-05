@@ -16,7 +16,7 @@
 
 /* menu responsivo para tablets e celulares*/
 body {
-    background-image: url('../../image/Caminho\ da\ Luz\ -\ background\ \(Desktop\ \ Versão\).jpg');
+    background-image: url('../img/O\ Silêncio\ do\ Mosteiro\ -\ background\ \(Desktop\ \ Versão\).jpg');
     background-repeat: no-repeat;
     background-color: var(--secundary-color);
     transition: background-color 0.5s ease;
@@ -366,7 +366,7 @@ body {
 
 @media (min-width: 710px) and (max-width: 1133px) {
     body {
-        background: url('../../Image/Caminho\ da\ Luz\ -\ background\ \(Tablet\ Version\).jpg');
+        background: url('../img/O\ Silêncio\ do\ Mosteiro\ -\ background\ \(Tablet\ Version\).jpg');
     }
 
     .header {
@@ -470,7 +470,7 @@ body {
 
 @media (min-width: 370px) and (max-width: 710px) {
     body {
-        background: url('../../Image/Caminho\ da\ Luz\ -\ background\ \(Mobile\ Version\).jpg');
+        background: url('../img/O\ Silêncio\ do\ Mosteiro\ -\ background\ \(Mobile\ Version\).jpg');
         background-repeat: no-repeat;
     }
 
@@ -527,7 +527,7 @@ body {
     }
 
     .conteudo {
-        height: 80vh;
+        min-height: 80vh;
     }
 
     /* Poster do filme */
@@ -536,6 +536,7 @@ body {
         display: flex;
         margin-left: 5%;
         gap: 10px;
+        height: 80vh;
     }
 
     .poster img {
