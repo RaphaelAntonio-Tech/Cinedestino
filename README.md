@@ -18,7 +18,7 @@ Cinedestino é um site de filmes, aonde todos os filmes são católicos e fictí
 
  ![Image](https://github.com/user-attachments/assets/0b63db2f-5023-4008-b155-8f2bd9180eb0)
 
-- Após o cadastro, o sistema gera um token de cadastro temporário, que é armazenado no banco de dados e utilizado para validar o acesso à etapa de definição da foto de perfil. Esse token impede acessos indevidos e garante que apenas usuários recém-cadastrados concluam o processo.
+ Após o cadastro, o sistema gera um token de cadastro temporário, que é armazenado no banco de dados e utilizado para validar o acesso à etapa de definição da foto de perfil. Esse token impede acessos indevidos e garante que apenas usuários recém-cadastrados concluam o processo.
 ![Image](https://github.com/user-attachments/assets/e4183694-2ef1-4517-8860-b6041dda3dd8)
 
 ### 🤳🏽 Foto de Perfil e Armazenamento 
