@@ -17,6 +17,7 @@
 /* menu responsivo para tablets e celulares*/
 body {
     background-image: url('../img/Entre\ Rosários\ e\ Estrelas\ -\ background\ \(Desktop\ \ Versão\).jpg');
+    background-position: center;
     background-repeat: no-repeat;
     background-color: var(--secundary-color);
     transition: background-color 0.5s ease;
@@ -365,9 +366,6 @@ body {
 /* Responsividade versão Tablet */
 
 @media (min-width: 710px) and (max-width: 1133px) {
-    body {
-        background: url('../img/Entre\ Rosários\ e\ Estrelas\ -\ background\ \(Tablet\ Version\).jpg');
-    }
 
     .header {
         display: none;
@@ -470,7 +468,7 @@ body {
 
 @media (min-width: 370px) and (max-width: 710px) {
     body {
-        background: url('../img/Entre\ Rosários\ e\ Estrelas\ -\ background\ \(Mobile\ Version\).jpg');
+        background: url('../img/Entre\ Rosários\ e\ Estrelas\ -\ background\ \(Tablet\ Version\).jpg');
         background-repeat: no-repeat;
     }
 
