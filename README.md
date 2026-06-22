@@ -1,121 +1,171 @@
-## Cinedestino 🎬
+# 🎬 CineDestino
 
-Cinedestino é um site de filmes católicos fictício criados pelo chat GPT (conteúdo) e Gemni IA (imagens) projeto em dupla que desenvolvi com meu amigo e colega de curso Lucas Batista desenvolvido com **HTML**,**CSS**,**JavaScript**,**PHP** e **MySQL**. Com toda certeza esse projeto é um marco enorme na minha jornada como desenvolvedor, simplesmente é meu primeiro projeto que possui uma versão responsiva para Desktops, Tablets e Celulares.
+<img width="1919" height="909" alt="Image" src="https://github.com/user-attachments/assets/bf5f2d72-1748-4c23-91bc-2cb98db1e491" />
 
-## 📌 Sobre o Projeto
+> Um catálogo fictício de filmes católicos desenvolvido para praticar desenvolvimento web, lógica de programação e trabalho em equipe.
 
-Cinedestino é um site de filmes, aonde todos os filmes são católicos e fictícios. O site é composto por:
+## 📖 Sobre o Projeto
 
-### 🛠️ Sistema de cadastro e Login com autenticação por token 
+O **CineDestino** é um projeto acadêmico e educacional criado com o objetivo de simular uma plataforma de filmes voltada ao público católico. O projeto foi desenvolvido em dupla para colocar em prática conceitos de desenvolvimento front-end, lógica de programação, responsividade e integração com sistemas de autenticação.
 
-![Image](https://github.com/user-attachments/assets/5941f80a-caaf-413c-b5c7-2827669a5d50)
+Além de proporcionar uma experiência visual agradável, o projeto serviu como ambiente de aprendizado para explorar a criação de interfaces modernas, interações básicas com JavaScript e comunicação com um sistema de login conectado a banco de dados.
 
-  Este projeto implementa um sistema completo de cadastro e login de usuários utilizando autenticação baseada em token, sem dependência de sessões tradicionais. O objetivo é garantir segurança, escalabilidade e organização no controle de acesso.
+---
 
- ### 📑 Cadastro de Usuário
+## 🎯 Objetivos do Projeto
 
-  O O sistema permite que novos usuários se cadastrem informando um endereço de e-mail e uma senha. Para garantir a segurança das credenciais, as senhas não são armazenadas em texto puro. Durante o cadastro, o sistema utiliza a função **password_hash**, aplicando o algoritmo de criptografia **bcrypt**, e salva apenas o **hash** da senha no banco de dados.
+- Praticar desenvolvimento web utilizando tecnologias fundamentais.
+    
+- Aplicar conceitos de lógica de programação em situações reais.
+    
+- Desenvolver interfaces responsivas para diferentes dispositivos.
+    
+- Simular o funcionamento de uma plataforma de catálogo de filmes.
+    
+- Trabalhar colaboração em equipe e divisão de responsabilidades.
+    
+- Aprender conceitos básicos de autenticação de usuários.
 
- ![Image](https://github.com/user-attachments/assets/0b63db2f-5023-4008-b155-8f2bd9180eb0)
+ ---
 
- Após o cadastro, o sistema gera um token de cadastro temporário, que é armazenado no banco de dados e utilizado para validar o acesso à etapa de definição da foto de perfil. Esse token impede acessos indevidos e garante que apenas usuários recém-cadastrados concluam o processo.
-![Image](https://github.com/user-attachments/assets/e4183694-2ef1-4517-8860-b6041dda3dd8)
+ ## 🚀 Funcionalidades
+ 
+### 🎥 Catálogo de Filmes
 
-### 🤳🏽 Foto de Perfil e Armazenamento 
+- Exibição de filmes católicos fictícios.
+    
+- Organização visual dos conteúdos.
+    
+- Layout pensado para facilitar a navegação.
 
-A foto de perfil enviada no cadastro é armazenada no **Supabase Storage**, e apenas a URL pública da imagem é salva no banco de dados. Isso permite que a imagem seja facilmente recuperada e exibida sempre que o usuário estiver autenticado no sistema.
+### 🔐 Sistema de Login
 
-### 🎲 Banco de Dados
+- Cadastro e autenticação de usuários.
+    
+- Validação de acesso.
+    
+- Integração com banco de dados.
 
-O banco de dados do projeto é hospedado no Supabase, que fornece uma infraestrutura baseada em PostgreSQL. Nele são armazenadas todas as informações essenciais do usuário, incluindo:
+### ✨ Interatividade
 
-- **ID do usuário** 
-- **Nome**
-- **E-mail** 
-- **Hash da senha** 
-- **URL da foto de perfil**
-- **Token de cadastro** 
-- **Token de login**
+- Animações suaves em botões.
+    
+- Feedback visual para ações do usuário.
+    
+- Pequenas interações para tornar a navegação mais dinâmica.
+    
+### 📱 Responsividade
 
-### 🔐 Login e autenticação por token
+- Adaptação para desktops, tablets e smartphones.
+    
+- Layout flexível para diferentes tamanhos de tela.
 
-No processo de login, o usuário informa seu e-mail e senha. O sistema recupera o **hash** da senha correspondente no banco de dados e utiliza **password_verify** para validar a senha digitada.
+### 🎨 Interface Moderna
 
-![Image](https://github.com/user-attachments/assets/8d1faebd-106f-41f4-8543-2c345f1e8940)
+- Design inspirado em plataformas de streaming.
+    
+- Organização visual focada na experiência do usuário.
+    
+- Identidade visual própria para o projeto.
 
-- Quando a autenticação é bem-sucedida, o sistema gera um token de login único e criptograficamente seguro, criado com **random_bytes**. Esse token é:
- - Salvo no banco de dados (**Supabase**)
- - Enviado ao navegador por meio de um cookie seguro
- - O cookie é configurado com as flags:
- - **HttpOnly** (impede acesso via **JavaScript**)
- - **Secure** (transmitido apenas em conexões HTTPS)
- - **SameSite** (proteção contra CSRF)
+  ---
 
-E se o e-mail ou a senha forem preenchidos de maneira incorreta, o sistema redireciona o usuário de volta para a página de login. A foto de perfil enviada no cadastro é salva diretamente em uma pasta dentro do próprio projeto. Apenas o caminho do arquivo é armazenado no banco de dados, o que permite que o sistema recupere e exiba a imagem sempre que o usuário estiver logado. 
+  ## 🛠️ Tecnologias Utilizadas
 
-![Image](https://github.com/user-attachments/assets/efa7a773-1018-4dc6-a00e-49013e5e1d17)
+### Front-end
 
-Caso o usuário não definir uma foto de perfil, o sistema automaticamente definirá uma imagem padrão para a conta.
+- HTML5
+    
+- CSS3
+    
+- JavaScript
 
-![Image](https://github.com/user-attachments/assets/2c3ba09a-17a7-4389-8cff-49ec362a48a3)
+### Back-end
 
-Dessa forma, o sistema oferece um processo de autenticação seguro, organizado e funcional, combinando criptografia de senha, gerenciamento de imagens e controle de acesso.
+- Sistema de autenticação
+    
+- Integração com banco de dados
 
-### 🔓 Controle de Acesso
+---
 
-Todas as páginas protegidas do sistema verificam a existência do cookie de autenticação e validam o token junto ao banco de dados. Caso o token seja inválido, inexistente ou expirado, o acesso é bloqueado e o usuário é redirecionado para a página de login.
+## 👨‍💻 Minha Contribuição
 
-Esse mecanismo garante que apenas usuários autenticados possam acessar áreas restritas do sistema.
+Fiquei responsável pelo desenvolvimento da experiência visual e da interface do usuário, incluindo:
 
-### LOGOUT
+- Criação do design da aplicação.
+    
+- Estruturação das páginas.
+    
+- Desenvolvimento do front-end.
+    
+- Implementação da responsividade.
+    
+- Criação de animações e efeitos visuais.
+    
+- Desenvolvimento de pequenas interações utilizando JavaScript.
+    
+- Ajustes de usabilidade e experiência do usuário.
 
-No processo de logout, o sistema remove o token de login do banco de dados e invalida o cookie armazenado no navegador. Dessa forma, o acesso do usuário é encerrado de forma completa e segura.
+  ---
 
-Dessa forma, o sistema oferece um processo de autenticação seguro, organizado e escalável, utilizando criptografia de senhas, autenticação baseada em token, armazenamento em nuvem com **Supabase** e controle eficiente de acesso às páginas protegidas.
+  ## 👨‍💻 Contribuição do Meu Amigo
 
-## 🛠️ Tecnologias Utilizadas
+Responsável pela parte de autenticação e persistência de dados:
 
-- **HTML5**
-- **CSS3**
-- **JavaScript**
-- **Figma** (para prototipagem do design)
-- **PHP**
-- **MySQL**
-- **Chat GPT** (criação dos filmes e auxílio na correção de erros)
-- **Gemni IA** (criação das Imagens)
+- Desenvolvimento do sistema de login.
+    
+- Integração com banco de dados.
+    
+- Validação de usuários.
+    
+- Gerenciamento das informações de acesso.
 
-## 📖 Aprendizados
+---
 
-Durante o desenvolvimento, pratiquei e aprimorei:
+## 📚 Aprendizados
 
-- Trabalhar em equipe para desenvolver o projeto
-- Melhorei bastante na organização e administração do projeto
-- Integração entre **lógica de programação** e **design de interface**
-- Organização e clareza no fluxo do código
-- Utilização de formulários HTML para coletar dados e envia-los ao servidor
-- Trabalhar com IA de forma inteligente
+Durante o desenvolvimento do CineDestino foi possível praticar:
 
-Além da parte técnica, também desenvolvi algumas **soft skills**:
-
-- Organização e atenção aos detalhes
-- Pensamento lógico aliado à criatividade
-- Persistência na resolução de erros
-- Clareza na apresentação do projeto
-
-## 🎨 Design
-
-O layout foi projetado no **Figma**, priorizando:
-
-- Interface limpa, objetiva e simples
-- Facilidade de uso
-- Praticando boa experiência do usuário (UX)
-
-<img width="1375" height="992" alt="Image" src="https://github.com/user-attachments/assets/e9203196-23cc-47f2-85f9-a75f46efcd20" />
-
-## 📄 Licença
-
-Este projeto foi desenvolvido apenas para fins de estudo.
+- Estruturação de projetos web.
+    
+- Organização de código.
+    
+- Trabalho em equipe.
+    
+- Responsividade.
+    
+- Manipulação do DOM.
+    
+- Lógica de programação.
+    
+- Experiência do usuário (UX).
+    
+- Conceitos de autenticação.
+    
+- Integração entre front-end e back-end.
+    
+--- 
 
 ## 🌐 Acesso
 
 Link para abrir na web: https://cinedestino.vercel.app/
+
+---
+
+## ⚠️ Aviso
+
+Este projeto possui fins exclusivamente educacionais e de aprendizado. Todos os filmes, descrições e conteúdos apresentados são fictícios e foram criados apenas para prática de desenvolvimento web.
+
+---
+
+## 🤝 Equipe
+
+Desenvolvido por:
+
+- Raphael Tech — Design, Front-end, Responsividade e Interatividade.
+    
+- Lucas-Oliveira951 — Sistema de Login e Banco de Dados.
+
+  ---
+  
+  ⭐ Projeto desenvolvido para aprimorar conhecimentos em desenvolvimento web, lógica de programação e colaboração em equipe.
